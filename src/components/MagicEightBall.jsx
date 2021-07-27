@@ -1,20 +1,22 @@
+import {EightBallPosition, EightBallGradient, Ewin, Triangle, Textbox} from './EightBallStyles'
+
 const MagicEightBall = (props) => {
     return (
         <>
 
-            <div className="epos">
+            <EightBallPosition>
                 <div className={!!props.questionAsked ? 'eball shake' : 'eball'}>
-                    <div className="egrad"></div>
-                    <div className="ewin"><div>
-                        <div className="triangle">
-                        </div>
-                        <div className="textbox">
+                    <EightBallGradient></EightBallGradient>
+                    <Ewin><div>
+                        <Triangle>
+                        </Triangle>
+                        <Textbox>
                         <h3>{props.answer}</h3>
-                        </div>
+                        </Textbox>
                     </div>
-                    </div>
+                    </Ewin>
                 </div>
-            </div>
+            </EightBallPosition>
         </>
     )
 }

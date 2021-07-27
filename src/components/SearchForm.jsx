@@ -1,6 +1,7 @@
 import React from 'react';
 import MagicEightBall from './MagicEightBall';
 import AnswerList from './AnswerList'
+import { AnswersContainer }from './AnswersContainer';
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -23,10 +24,10 @@ class SearchForm extends React.Component {
             answer: response.magic.answer,
             answersList: [...this.state.answersList, questionAndAnswer],
             questionAsked: true
-
         })
         console.log(this.state.answer)
         console.log(this.state.answersList)
+        event.target.reset()
     }
 
     _handleChange = (event) => {
@@ -74,10 +75,10 @@ class SearchForm extends React.Component {
                     questionAsked={this.state.questionAsked}
                 />
                 {answersList.length > 1 ? 
-                <div className="AllAnswers">
+                <AnswersContainer>
                     <h2>Your Previous Questions</h2>
                 {allQuestions}
-                </div>
+                </AnswersContainer>
                  : null}
             </>
         )

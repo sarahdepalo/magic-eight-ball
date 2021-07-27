@@ -1,10 +1,12 @@
+import {Answers} from './AnswersContainer';
+
 const AnswerList = (props) => {
     return (
         <>
-        <div className="Answer">
+        <Answers>
             <h3>Question: {props.question}</h3>
             <h3>Answer: {props.answer}</h3>
-        </div>
+        </Answers>
         </>
     )
 }
